@@ -1,0 +1,29 @@
+#! /bin/bash
+
+#---------------------------------------
+# $Author: ee364c26 $
+# $Date: 2017-09-03 21:10:38 -0400 (Sun, 03 Sep 2017) $
+#---------------------------------------
+
+# Do not modify above this line.
+
+list=$(ls c-files/*.c)
+for item in $list
+do	
+	len=$(echo $item | wc -c)
+	var=$(echo $item | cut -c9-$len)
+	echo -n "Compiling file $var..."
+	gcc -Wall -Werror $item 2> /dev/null
+	if [[ $? != 0 ]]
+	then
+		echo "Error: Compilation failed."
+	else
+		echo "Compilation succeeded."
+		((l=len-3))
+		fname=$(echo $item | cut -c9-$l)
+		a.out > $fname.out
+		
+	fi
+done
+
+exit 0 

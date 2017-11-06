@@ -1,0 +1,11 @@
+no
+yes
+dumb
+foo
+bar
+lolo
+lulu
+hiiiii
+zooooo
+sooooo
+

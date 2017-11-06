@@ -1,0 +1,21 @@
+#! /bin/bash
+
+# $Author$
+# $Date$
+
+function array 
+{
+    # Fill out.
+	ARR=(a.txt b.txt c.txt d.txt e.txt)
+	num=$($RANDOM%5)
+	head -n 9 ${ARR[$num]}| tail -n 3
+    	return
+
+}
+
+
+#
+# To test your function, you can call it below like this:
+#
+array 
+#
